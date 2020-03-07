@@ -207,7 +207,7 @@ func (h *httpHandler) handleRequest(conn net.Conn, req *http.Request) {
 		return
 	}
 
-	if req.Method == "PRI" || (req.Method != http.MethodConnect && req.URL.Scheme != "http") {
+	if req.Method == "PRI" {
 		resp.StatusCode = http.StatusBadRequest
 
 		if Debug {
